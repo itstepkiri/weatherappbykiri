@@ -1,0 +1,166 @@
+body {
+  background-color: rgba(41, 147, 247, 0.753);
+  background-repeat: no-repeat;
+  background-size: 240px;
+  background-attachment: fixed;
+}
+
+@font-face {
+  font-family: "Jungle";
+  src: url(../font/junegull\ rg.ttf);
+}
+@font-face {
+  font-family: "BeerCash";
+  src: url(../font/beer\ money.ttf);
+}
+.search {
+  height: 90%;
+  background-color: rgb(19, 121, 189);
+  border: cornsilk 2px solid;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+.search h1 {
+  margin-top: 10%;
+  color: rgb(93, 204, 121);
+  font-size: 90px;
+}
+.search h2 {
+  margin-top: 5%;
+  color: rgba(31, 192, 71, 0.795);
+  font-size: 34px;
+}
+.search h4 {
+  margin-top: 5%;
+  color: rgb(0, 0, 139);
+  font-size: 30px;
+}
+.search input {
+  margin: 4% 15px;
+  width: 50%;
+  height: 45px;
+  border: cornsilk 2px solid;
+  border-radius: 10px;
+  background-color: rgb(83, 83, 110);
+  color: lightblue;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+.search button {
+  margin-bottom: 5%;
+  width: 150px;
+  height: 45px;
+  border: cornsilk 2px solid;
+  border-radius: 10px;
+  background-color: rgb(73, 187, 22);
+  color: darkblue;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.1s all linear;
+}
+.search button:hover {
+  background-color: darkblue;
+  color: rgb(73, 187, 22);
+}
+
+.weather {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  vertical-align: center;
+  border-radius: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.weather #backBtn {
+  transition: all 0.2s linear;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+.weather #backBtn:hover {
+  opacity: 0.8;
+}
+.weather .inside {
+  border: 1px solid cornsilk;
+  border-radius: 10px;
+  color: rgb(13, 1, 14);
+  font-family: Jungle;
+  display: flex;
+  align-items: center;
+}
+.weather .inside h1 {
+  font-size: 30px;
+}
+.weather .inside h2 {
+  font-size: 25px;
+  color: rgb(92, 138, 153);
+}
+.weather .inside h3 {
+  font-size: 20px;
+  color: rgb(46, 120, 155);
+}
+.weather .inside2 {
+  border: 1px solid cornsilk;
+  border-radius: 10px;
+  color: rgb(90, 24, 24);
+  font-family: Jungle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.weather .inside3 {
+  border: 1px solid cornsilk;
+  border-radius: 10px;
+  color: rgb(90, 24, 24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.weather .inside4 {
+  border: 1px solid cornsilk;
+  border-radius: 10px;
+  color: rgb(90, 24, 24);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.weather .inside4 h3 {
+  font-size: 25px;
+}
+.weather .inside5 {
+  width: 100%;
+}
+.weather .positionTop {
+  position: relative;
+  top: -60px;
+}
+.weather .positionTop #titleForTable {
+  margin: 0;
+  font-size: 24px;
+}
+.weather .positionTop hr {
+  color: cornsilk;
+}
+.weather .positionTop table, .weather .positionTop tr, .weather .positionTop th, .weather .positionTop td {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid rgb(97, 71, 71);
+}
+.weather .positionTop table th, .weather .positionTop tr th, .weather .positionTop th th, .weather .positionTop td th {
+  color: rgb(37, 37, 66);
+}
+.weather .positionTop table tr:hover td, .weather .positionTop tr tr:hover td, .weather .positionTop th tr:hover td, .weather .positionTop td tr:hover td {
+  background-color: rgb(223, 180, 180);
+  color: white;
+  cursor: pointer;
+  opacity: 0.8;
+}/*# sourceMappingURL=style.css.map */
