@@ -3,6 +3,7 @@ body {
   background-repeat: no-repeat;
   background-size: 240px;
   background-attachment: fixed;
+  transition: all 1s linear;
 }
 
 @font-face {
@@ -81,10 +82,33 @@ body {
   transition: all 0.2s linear;
   width: 70px;
   height: 70px;
+  margin: 50px;
   cursor: pointer;
 }
 .weather #backBtn:hover {
   opacity: 0.8;
+}
+.weather .buttons {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+}
+.weather .buttons button {
+  width: 100px;
+  height: 30px;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: purple;
+  transition: 0.1s all linear;
+}
+.weather .buttons button:hover {
+  opacity: 0.8;
+}
+.weather .buttons button p {
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: rgb(219, 210, 210);
 }
 .weather .inside {
   border: 1px solid cornsilk;
@@ -140,9 +164,9 @@ body {
 }
 .weather .positionTop {
   position: relative;
-  top: -60px;
+  top: 10px;
 }
-.weather .positionTop #titleForTable {
+.weather .positionTop #titleForTable2 {
   margin: 0;
   font-size: 24px;
 }
@@ -153,14 +177,49 @@ body {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  border: 3px solid rgb(97, 71, 71);
+  border: 2px solid rgb(109, 5, 5);
+}
+.weather .positionTop table td, .weather .positionTop tr td, .weather .positionTop th td, .weather .positionTop td td {
+  color: rgb(158, 41, 129);
+  font-weight: 1000;
 }
 .weather .positionTop table th, .weather .positionTop tr th, .weather .positionTop th th, .weather .positionTop td th {
-  color: rgb(37, 37, 66);
+  color: rgb(76, 159, 170);
 }
 .weather .positionTop table tr:hover td, .weather .positionTop tr tr:hover td, .weather .positionTop th tr:hover td, .weather .positionTop td tr:hover td {
   background-color: rgb(223, 180, 180);
   color: white;
   cursor: pointer;
   opacity: 0.8;
+}
+.weather .addInfo {
+  position: relative;
+  top: 20px;
+}
+.weather .addInfo #titleForTable {
+  margin: 0;
+  font-size: 24px;
+}
+.weather .addInfo table, .weather .addInfo tr, .weather .addInfo th, .weather .addInfo td {
+  table-layout: fixed;
+  width: 70%;
+  margin: 20px auto;
+  padding: 10px;
+  border-collapse: collapse;
+  border: 2px solid rgb(121, 68, 68);
+}
+.weather .addInfo table td, .weather .addInfo tr td, .weather .addInfo th td, .weather .addInfo td td {
+  color: rgb(158, 41, 129);
+  font-weight: 1000;
+}
+.weather .addInfo table th, .weather .addInfo tr th, .weather .addInfo th th, .weather .addInfo td th {
+  color: rgb(76, 159, 170);
+}
+
+.changeDisplay {
+  display: none;
+}
+
+.changeDisplay2 {
+  display: block;
 }/*# sourceMappingURL=style.css.map */

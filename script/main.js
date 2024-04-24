@@ -1,6 +1,37 @@
+// if(new Date().getHours() > 21 || new Date().getHours() < 8){
+
 if(new Date().getHours() > 21 || new Date().getHours() < 8){
     document.body.style.backgroundImage = `url(../img/moon.png)`
     document.body.style.backgroundPosition = `top right`
+    document.body.style.backgroundColor = 'rgb(4, 4, 49)'
+    document.getElementById('city').style.color = `white`
+    document.getElementById('weatherStan').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('temp').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('tempFelt').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('tempMax').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('tempMin').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('humidity').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('pressure').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('seaLevel').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('visibility').style.color = `rgba(189, 211, 231, 0.753)`
+    document.getElementById('titleForTable').style.color = `white`
+    document.getElementById('titleForTable2').style.color = `white`
+    document.querySelector('#darkModeTh').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh2').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh3').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh4').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh5').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh6').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh7').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh8').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh9').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh10').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh11').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('#darkModeTh12').style.color = `rgba(189, 211, 231, 0.753)`
+    document.querySelector('.search').style.backgroundColor = `rgb(22, 60, 85)`
+    document.querySelector('.search h1').style.color = `yellow`
+    document.querySelector('.search h2').style.color = `yellow`
+    document.querySelector('.search h4').style.color = `white`
 } else{
     document.body.style.backgroundImage = `url(../img/sun.png)`
     document.body.style.backgroundPosition = `top left`
@@ -15,10 +46,6 @@ document.querySelector('.searchBtn').addEventListener('click', () => {
     cityName()
 })
 
-document.getElementById('backBtn').addEventListener('click', () => {
-    document.querySelector('.weather').style.display = `none`
-    document.querySelector('.search').style.display = `block`
-})
 
 function cityName(){
     const city = document.querySelector('.search input')
@@ -47,6 +74,7 @@ async function weather(url){
             document.querySelector('.search').style.display = `none`
         }
         main(data)
+        additionalInfo(data)
         newElTable(data)
         console.log(data);
     } catch (error) {
@@ -74,7 +102,8 @@ function main(data){
 }
 
 function newElTable(data){
-    const table = document.getElementById('allInfo')
+    const table = document.getElementById('tbody2')
+    table.innerHTML = ''
     data.list.forEach(item => {
         const {dt_txt, main, visibility, wind, weather} = item
         const {feels_like, humidity, pressure, sea_level, temp, temp_max, temp_min} = main
@@ -101,3 +130,73 @@ function newElTable(data){
     })
 
 }
+
+function additionalInfo(data){
+    const table = document.getElementById('tbody')
+    table.innerHTML = ''
+    const addInfo = `
+    <td>${data.city.id}</td>
+    <td>${data.city.country}</td>
+    <td>${data.city.population}</td>
+    <td>${data.city.timezone}</td>
+    <td>${data.city.coord.lat}</td>
+    <td>${data.city.coord.lon}</td>
+    `
+
+    let tr = document.createElement('tr')
+    tr.innerHTML = addInfo
+    table.appendChild(tr)
+
+}
+
+// dop
+const button5day = document.getElementById('show5days')
+const buttonMore = document.getElementById('showMoreInfo')
+const additInfo = document.querySelector('.addInfo')
+const posEl = document.querySelector('.positionTop')
+const p = document.querySelector('.dayP')
+const p2 = document.querySelector('.dayP2')
+const p3 = document.querySelector('.dop')
+const p4 = document.querySelector('.dop2')
+button5day.addEventListener('click', () => {
+    posEl.classList.toggle('changeDisplay')
+    posEl.classList.toggle('changeDisplay2')
+    p.classList.toggle('changeDisplay')
+    p.classList.toggle('changeDisplay2')
+    p2.classList.toggle('changeDisplay')
+    p2.classList.toggle('changeDisplay2')
+})
+
+buttonMore.addEventListener('click', () => {
+    additInfo.classList.toggle('changeDisplay')
+    additInfo.classList.toggle('changeDisplay2')
+    p3.classList.toggle('changeDisplay')
+    p3.classList.toggle('changeDisplay2')
+    p4.classList.toggle('changeDisplay')
+    p4.classList.toggle('changeDisplay2')
+})
+
+document.getElementById('backBtn').addEventListener('click', () => {
+    document.querySelector('.weather').style.display = `none`
+    document.querySelector('.search').style.display = `block`
+    console.log(posEl.classList.contains('changeDisplay2'));
+    //? 1
+    if(posEl.classList.contains('changeDisplay2') === true){
+        posEl.classList.remove('changeDisplay2')
+        posEl.classList.add('changeDisplay')
+        p.classList.remove('changeDisplay')
+        p.classList.add('changeDisplay2')
+        p2.classList.remove('changeDisplay2')
+        p2.classList.add('changeDisplay')
+    }
+    //? 2
+    if(additInfo.classList.contains('changeDisplay2') === true){
+        additInfo.classList.remove('changeDisplay2')
+        additInfo.classList.add('changeDisplay')
+        p3.classList.remove('changeDisplay')
+        p3.classList.add('changeDisplay2')
+        p4.classList.remove('changeDisplay2')
+        p4.classList.add('changeDisplay')
+    }
+
+})
